@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background donut circle -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@android:color/darker_gray"/>
+            <corners android:radius="50dp"/>
+            <size android:width="200dp" android:height="200dp"/>
+        </shape>
+    </item>
+
+    <!-- Capsule-shaped foreground progress -->
+    <item android:id="@android:id/progress">
+        <shape>
+            <solid android:color="@color/greenBackground"/>
+            <corners android:radius="50dp"/> <!-- Radius for rounded capsule ends -->
+            <size android:width="200dp" android:height="100dp" /> <!-- Wider width, making it capsule-shaped -->
+        </shape>
+    </item>
+</layer-list>

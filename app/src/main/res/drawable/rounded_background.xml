@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/greenBackground"/> <!-- Customize the background color -->
+    <corners android:radius="16dp"/> <!-- Adjust the radius for rounded corners -->
+    <elevation android:value="4dp"/> <!-- Add shadow for elevation (if using Material Components) -->
+</shape>

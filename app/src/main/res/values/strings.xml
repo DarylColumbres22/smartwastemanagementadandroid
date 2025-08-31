@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SmartWaste</string>
+    <string name="terms_conditions">Terms &amp; Conditions</string>
+    <string name="default_web_client_id">970871946021-8rtcv7e1n4m6r9dhap1sheijjcfc6mkg.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile_image">string/profile_image</string>
+    <string name="recaptcha_site_key">6Lf4PfAqAAAAADEmE5vdH9vITUeEsrYRhpi7qcBP</string>
+
+    <string name="cd_app_logo">App logo</string>
+    <string name="link_use_email">Use email instead</string>
+    <string name="email_sent_title">Check your email</string>
+    <string name="email_sent_msg">We’ve sent a one-time code. Open your inbox to continue.</string>
+    <string name="email_error_title">Couldn’t send the code</string>
+    <string name="email_error_msg">Something went wrong sending the email.</string>
+
+    <!-- Email-only copy -->
+    <string name="otp_email_title">Check your email</string>
+    <string name="otp_email_message">We’ll send a one-time passcode (OTP) to your registered email.</string>
+    <string name="otp_email_masked_placeholder">Sending to: ****@example.com</string>
+
+    <string name="action_cancel">Cancel</string>
+    <string name="action_send_otp_email">Send OTP to email</string>
+    <string name="action_resend_otp">Resend code</string>
+
+</resources>

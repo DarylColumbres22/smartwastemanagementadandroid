@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="medyowhite">#F5F5F5</color>
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="primaryColor">#3b5998</color>
+    <color name="blue">#007AFF</color>
+    <color name="greenBackground">#4CAF50</color>
+    <color name="orangeBackground">#FFCC80</color>
+    <color name="darkGreen">#388E3C</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FFA500</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="gray">#808080</color>
+    <color name="green">#008000</color>
+    <color name="darkBackground">#1E1E2E</color>
+    <color name="pink">#FF007F</color>
+    <color name="brown">#8B4513</color>
+    <color name="grayDark">#374151</color>
+    <color name="meter_green">#23A559</color>
+    <color name="meter_yellow">#F4B000</color>
+    <color name="meter_orange">#F97316</color>
+    <color name="meter_red">#E63B2E</color>
+    <color name="meter_track">#EAECEF</color>
+
+
+</resources>
+
+
+

@@ -1,0 +1,20 @@
+<!-- res/drawable/oval_progress.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background oval shape -->
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@android:color/darker_gray" />
+            <corners android:radius="50dp" />
+            <size android:width="200dp" android:height="100dp"/> <!-- Oval width and height -->
+        </shape>
+    </item>
+
+    <!-- Foreground oval progress -->
+    <item android:id="@android:id/progress">
+        <shape>
+            <solid android:color="@color/greenBackground" /> <!-- Finished color -->
+            <corners android:radius="50dp" />
+            <size android:width="200dp" android:height="100dp" /> <!-- Oval width and height -->
+        </shape>
+    </item>
+</layer-list>

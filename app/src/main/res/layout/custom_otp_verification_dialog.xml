@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="16dp"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <!-- Title (static) -->
+        <TextView
+            android:id="@+id/dialogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OTP Authentication"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginBottom="4dp"/>
+
+        <!-- Email line (shows masked email) -->
+        <TextView
+            android:id="@+id/dialogEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please check your registered email"
+            android:textSize="10sp"
+            android:textColor="#555555"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- OTP boxes row -->
+        <LinearLayout
+            android:id="@+id/otpRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <EditText
+                android:id="@+id/txtOtp1"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+
+            <EditText
+                android:id="@+id/txtOtp2"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+
+            <EditText
+                android:id="@+id/txtOtp3"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+
+            <EditText
+                android:id="@+id/txtOtp4"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+
+            <EditText
+                android:id="@+id/txtOtp5"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+
+            <EditText
+                android:id="@+id/txtOtp6"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:importantForAutofill="no"
+                android:imeOptions="flagNoPersonalizedLearning"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvExpiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code expires in 05:00"
+            android:textSize="12sp"
+            android:textColor="#6E6E6E"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Verify button -->
+        <Button
+            android:id="@+id/verifyButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Verify OTP"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/darkGreen"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Resend row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/tvDidntReceive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive a code?"
+                android:textSize="13sp"
+                android:textColor="@android:color/black"
+                android:paddingEnd="4dp"/>
+
+            <!-- countdown, then turns into a clickable "Resend" -->
+            <TextView
+                android:id="@+id/tvResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend in 30s"
+                android:textSize="13sp"
+                android:textColor="#6E6E6E"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

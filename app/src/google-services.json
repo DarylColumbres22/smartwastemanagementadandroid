@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "970871946021",
+    "project_id": "smartwastemanagement-41113",
+    "storage_bucket": "smartwastemanagement-41113.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970871946021:android:98f19fb02448f2bf68b8cc",
+        "android_client_info": {
+          "package_name": "com.example.smartwaste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970871946021-3ocon381vjih79doq5ohplos8j4hokfv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartwaste",
+            "certificate_hash": "8be95b14a3b7126ad604f706522d7ae3ab57270d"
+          }
+        },
+        {
+          "client_id": "970871946021-8rtcv7e1n4m6r9dhap1sheijjcfc6mkg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK6hny_8iDIPhXRKoEoMVv24CP2NlDPF0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970871946021-8rtcv7e1n4m6r9dhap1sheijjcfc6mkg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

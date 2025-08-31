@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Pressed State (When button is tapped) -->
+    <item android:state_pressed="true" android:color="@android:color/white"/>  <!-- White text when pressed -->
+
+    <!-- Default State -->
+    <item android:color="@color/greenBackground"/>  <!-- Normal green text -->
+</selector>

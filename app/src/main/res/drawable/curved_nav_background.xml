@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Solid Color -->
+    <solid android:color="@color/white" />
+
+    <!-- Define specific corner radii -->
+    <corners
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        android:bottomLeftRadius="23dp"
+        android:bottomRightRadius="23dp" />
+
+    <!-- Padding for internal content -->
+    <padding
+        android:left="1dp"
+        android:top="1dp"
+        android:right="1dp"
+        android:bottom="1dp" />
+
+    <!-- Elevation for shadow effect -->
+    <elevation android:shadowColor="#40000000" android:radius="8dp" />
+</shape>
