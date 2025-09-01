@@ -7,6 +7,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.pm.PackageManager
+import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +29,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.messaging.FirebaseMessaging
 import android.text.format.DateUtils
+import android.widget.ImageView
+import com.google.android.material.card.MaterialCardView
 
 
 class HomeFragment : Fragment() {
@@ -70,6 +73,7 @@ class HomeFragment : Fragment() {
     private var pctRecyclable: Int = 0
     private var pctResidual: Int = 0
     private var pctHazardous: Int = 0
+    private var lastWasteCount = 0
 
     // Firebase
     private lateinit var database: DatabaseReference
@@ -80,6 +84,16 @@ class HomeFragment : Fragment() {
     private var fcmToken: String? = null
 
     private var isShuttingDown = false
+
+   // points to R.id.overallWasteCount
+    private lateinit var fullBinsCount: TextView          // points to R.id.fullBinsCount
+    private lateinit var fullBinsCard: com.google.android.material.card.MaterialCardView
+    private lateinit var fullBinsIcon: ImageView
+
+    private val FULL_THRESHOLD = 100
+    private val NEAR_THRESHOLD = 90
+
+
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -114,6 +128,13 @@ class HomeFragment : Fragment() {
 
         lastUpdated = view.findViewById(R.id.lastUpdated)
         lastUpdated.post(relativeTick)
+
+        // in onViewCreated(...) after findViewById for your other views:
+        fullBinsCount = view.findViewById(R.id.fullBinsCount)
+        fullBinsCard  = view.findViewById(R.id.fullBinsCard)
+        fullBinsIcon  = view.findViewById(R.id.fullBinsIcon)
+
+
 
 
         // 2) NOW it's safe to set initial progress/max
@@ -150,6 +171,44 @@ class HomeFragment : Fragment() {
             lastUpdated.postDelayed(this, 30_000L)
         }
     }
+
+    private fun updateStatCards() {
+        val levels = listOf(pctBio, pctRecyclable, pctResidual, pctHazardous)
+
+        val full = levels.count { it >= FULL_THRESHOLD }
+        val near = levels.count { it in NEAR_THRESHOLD until FULL_THRESHOLD }
+
+        val label = when {
+            full > 0 -> if (full == 1) "1 container needs emptying" else "$full containers need emptying"
+            near > 0 -> if (near == 1) "1 container is near full" else "$near containers are near full"
+            else     -> "All containers OK"
+        }
+        fullBinsCount.text = label
+
+        val track  = ContextCompat.getColor(requireContext(), R.color.meter_track)
+        val red    = ContextCompat.getColor(requireContext(), R.color.meter_red)
+        val orange = ContextCompat.getColor(requireContext(), R.color.meter_orange) // make sure this exists
+        val green  = ContextCompat.getColor(requireContext(), R.color.meter_green)
+
+        when {
+            full > 0 -> {
+                fullBinsIcon.setImageResource(R.drawable.ic_hazard)
+                fullBinsIcon.imageTintList = ColorStateList.valueOf(red)
+                fullBinsCard.strokeColor = red
+            }
+            near > 0 -> {
+                fullBinsIcon.setImageResource(R.drawable.ic_hazard)   // add this vector if you like
+                fullBinsIcon.imageTintList = ColorStateList.valueOf(orange)
+                fullBinsCard.strokeColor = orange
+            }
+            else -> {
+                fullBinsIcon.setImageResource(R.drawable.ic_ok)
+                fullBinsIcon.imageTintList = ColorStateList.valueOf(green)
+                fullBinsCard.strokeColor = track   // or green for a “success” frame
+            }
+        }
+    }
+
 
     private fun markUpdatedNow() {
         lastUpdateMillis = System.currentTimeMillis()
@@ -236,6 +295,18 @@ class HomeFragment : Fragment() {
             }.addOnFailureListener {
                 Log.e("HomeFragment", "manualRefresh: recyclable error: ${it.message}")
             }.addOnCompleteListener { done() }
+    }
+    private fun animateWasteCount(to: Int) {
+        val tv = overallWasteLabel // this is your overallWasteCount TextView
+        val from = lastWasteCount
+        if (from == to) return
+        ValueAnimator.ofInt(from, to).apply {
+            duration = 500
+            interpolator = FastOutSlowInInterpolator()
+            addUpdateListener { tv.text = (it.animatedValue as Int).toString() }
+            start()
+        }
+        lastWasteCount = to
     }
 
     private fun applyMeter(
@@ -380,6 +451,7 @@ class HomeFragment : Fragment() {
         applyMeter(percentage, residualBar, residualPercent, residualStatusText)
         pctBio = percentage
         refreshOverall()
+        updateStatCards()
         Log.d("HomeFragment", "✅ Biodegradable = $percentage%")
         markUpdatedNow()
     }
@@ -388,12 +460,14 @@ class HomeFragment : Fragment() {
         applyMeter(percentage, nonBiodegradableBar, nonBiodegradablePercent, nonBiodegradableStatus)
         pctRecyclable = percentage
         refreshOverall()
+        updateStatCards()
         Log.d("HomeFragment", "✅ Recyclable = $percentage%")
         markUpdatedNow()
     }
     private fun updateResidualData(percentage: Int) {
         if (percentage == pctResidual) return
         applyMeter(percentage, residual2Bar, residual2Percent, residual2Status)
+        updateStatCards()
         pctResidual = percentage
         refreshOverall()
     }
@@ -401,6 +475,7 @@ class HomeFragment : Fragment() {
     private fun updateHazardousData(percentage: Int) {
         if (percentage == pctHazardous) return
         applyMeter(percentage, hazardousBar, hazardousPercent, hazardousStatus)
+        updateStatCards()
         pctHazardous = percentage
         refreshOverall()
     }
