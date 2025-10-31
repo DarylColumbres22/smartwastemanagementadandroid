@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Bottom nav: hide active indicator (optional) -->
+    <style name="BottomNav_NoActiveIndicator">
+        <item name="android:width">0dp</item>
+        <item name="android:height">0dp</item>
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+
+    <!-- Pill text -->
+    <style name="Text.Pill" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:background">@drawable/bg_pill</item>
+    </style>
+
+    <style name="Text.Pill.Small" parent="Text.Pill">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <!-- Export button -->
+    <style name="Widget.ExportButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">44dp</item>
+        <item name="iconSize">18dp</item>
+        <item name="iconPadding">8dp</item>
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/meter_track</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <!-- Dialog styles -->
+    <style name="RoundedAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearance">@style/DialogCornerShape</item>
+        <item name="backgroundColor">@android:color/white</item>
+        <item name="backgroundInsetStart">0dp</item>
+        <item name="backgroundInsetEnd">0dp</item>
+        <item name="backgroundInsetTop">0dp</item>
+        <item name="backgroundInsetBottom">0dp</item>
+    </style>
+
+    <style name="DialogCornerShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <style name="AppDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeOverlay.MyApp.AlertDialog.NoInsets" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="backgroundInsetStart">0dp</item>
+        <item name="backgroundInsetEnd">0dp</item>
+        <item name="backgroundInsetTop">0dp</item>
+        <item name="backgroundInsetBottom">0dp</item>
+    </style>
+
+    <!-- BADGES -->
+    <style name="Badge.Base">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Back-compat: keep @style/Badge available WITHOUT a parent (prevents cycles) -->
+    <style name="Badge">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Badge.Success" parent="Badge.Base">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/badge_green</item>
+    </style>
+
+    <style name="Badge.Neutral" parent="Badge.Base">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/badge_gray</item>
+    </style>
+
+    <style name="Badge.Danger" parent="Badge.Base">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/badge_red</item>
+    </style>
+    <!-- END BADGES -->
+
+    <!-- Simple cell styles -->
+    <style name="CellHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="CellText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="CellMono">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <!-- Shape overlays -->
+    <!-- NEW: generic fallback for @style/ShapeAppearanceOverlay references -->
+    <style name="ShapeAppearanceOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Back-compat: some layouts reference this base overlay -->
+    <style name="ShapeAppearanceOverlay.SmartWaste">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Specific card overlay -->
+    <style name="ShapeAppearanceOverlay.SmartWaste.Card">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Optional rounded dialog variant -->
+    <style name="AppRoundedDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearance">@style/AppDialogCorners</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="backgroundInsetStart">0dp</item>
+        <item name="backgroundInsetEnd">0dp</item>
+        <item name="backgroundInsetTop">0dp</item>
+        <item name="backgroundInsetBottom">0dp</item>
+    </style>
+
+    <style name="AppDialogCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+</resources>

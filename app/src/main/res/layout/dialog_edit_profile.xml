@@ -5,9 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="24dp"
-    app:cardCornerRadius="10dp"
+    android:padding="24dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="true"
     app:cardElevation="8dp"
-    android:padding="24dp">
+    app:cardBackgroundColor="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,7 +88,7 @@
             android:paddingBottom="8dp">
 
             <Button
-                android:id="@+id/cancelButton"
+                android:id="@+id/btnCancel"
                 android:layout_width="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_height="wrap_content"
@@ -96,7 +99,7 @@
                 android:textSize="14sp"/>
 
             <Button
-                android:id="@+id/saveButton"
+                android:id="@+id/btnSave"
                 android:layout_width="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_height="wrap_content"

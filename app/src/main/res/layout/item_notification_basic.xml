@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="12dp"
+    app:strokeWidth="0dp"
+    app:cardUseCompatPadding="false"
+    app:cardPreventCornerOverlap="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:strokeColor="@color/meter_track"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/checked" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You approved a login."
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/subText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="realme RMX1971 • gob****@example.com"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3d"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

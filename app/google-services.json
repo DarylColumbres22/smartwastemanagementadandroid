@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:970871946021:android:98f19fb02448f2bf68b8cc",
+        "mobilesdk_app_id": "1:970871946021:android:b673b0841b4b0c2868b8cc",
         "android_client_info": {
-          "package_name": "com.example.smartwaste"
+          "package_name": "com.smartwaste.capstone"
         }
       },
       "oauth_client": [
         {
-          "client_id": "970871946021-3ocon381vjih79doq5ohplos8j4hokfv.apps.googleusercontent.com",
+          "client_id": "970871946021-lr84fs62kvkftkad37ibn83ac406qmiu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.smartwaste",
-            "certificate_hash": "8be95b14a3b7126ad604f706522d7ae3ab57270d"
+            "package_name": "com.smartwaste.capstone",
+            "certificate_hash": "1f88efd9f91126495df4c4e590ee32b46f5d4ee2"
           }
         },
         {

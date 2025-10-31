@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.smartwaste"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- permissions stay the same -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -10,7 +12,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+
     <application
+        android:name="com.example.capstone.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,23 +31,9 @@
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_recycling" />
 
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data
-                    android:host="smartwaste.page.link"
-                    android:scheme="https"
-                    android:pathPrefix="/reset"/>
-            </intent-filter>
-        </activity>
-
 
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.capstone.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,31 +41,18 @@
             </intent-filter>
         </activity>
 
-
-        <activity
-            android:name=".Activity_Login"
-            android:exported="true">
-
-        </activity>
-
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
-
-        <activity android:name=".Main_Homepage"></activity>
+        <activity android:name="com.example.capstone.Activity_Login" android:exported="true" />
+        <activity android:name="com.example.capstone.MainActivity" android:exported="true" />
+        <activity android:name="com.example.capstone.Main_Homepage" />
 
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name="com.example.capstone.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".RegistrationActivity"></activity>
-
     </application>
+
 </manifest>

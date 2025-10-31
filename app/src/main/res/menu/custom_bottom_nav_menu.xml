@@ -2,14 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_home_selector"
         android:title="Home"/>
     <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_dashboard_selector"
+        android:title="Analytics" />
+    <item
+        android:id="@+id/nav_admin"
+        android:icon="@drawable/ic_admin_selector"
+        android:title="Admin"
+        android:visible="false" />
+    <item
         android:id="@+id/nav_notifications"
-        android:icon="@drawable/ic_notification"
+        android:icon="@drawable/ic_notification_selector"
         android:title="Notifications" />
     <item
         android:id="@+id/nav_profile"
-        android:icon="@drawable/ic_profiles"
+        android:icon="@drawable/ic_profiles_selector"
         android:title="Profile" />
 </menu>

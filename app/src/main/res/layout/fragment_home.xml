@@ -48,10 +48,11 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/overallWasteCard"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true"
@@ -118,16 +119,18 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/fullBinsCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="44dp"
                 android:layout_marginEnd="10dp"
                 app:cardElevation="4dp"
                 app:cardUseCompatPadding="true"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/overallWasteCard"
                 app:strokeColor="@color/meter_track"
@@ -170,7 +173,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-
             <TextView
                 android:id="@+id/headerSubtitle"
                 android:layout_width="wrap_content"
@@ -188,7 +190,7 @@
                 android:id="@+id/levelsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="28dp"
                 android:orientation="vertical"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
@@ -486,6 +488,20 @@
                     android:progress="0"
                     android:progressDrawable="@drawable/progress_neutral" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/topUpdated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realtime data · —"
+                android:textColor="@color/grayDark"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/overallWasteCard"
+                app:layout_constraintEnd_toEndOf="@+id/overallRow"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/overallRow"
+                app:layout_constraintTop_toBottomOf="@+id/overallRow"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

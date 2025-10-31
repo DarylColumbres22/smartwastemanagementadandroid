@@ -23,6 +23,17 @@
     <color name="meter_orange">#F97316</color>
     <color name="meter_red">#E63B2E</color>
     <color name="meter_track">#EAECEF</color>
+    <color name="chart_bio">#2E7D32</color>
+    <color name="chart_rec">#0277BD</color>
+    <color name="chart_grid">#E0E0E0</color>
+    <color name="chart_res">#FF9800</color>
+    <color name="chart_haz">#1E1E2E</color>
+    <color name="chart_text">#333333</color>
+    <color name="alert_red">#D32F2F</color>
+    <color name="alert_orange">#F57C00</color>
+    <color name="success_green">#388E3C</color>
+
+
 
 
 </resources>

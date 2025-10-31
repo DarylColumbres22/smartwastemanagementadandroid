@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected item: 3dp underline at the bottom -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <size android:height="3dp"/>
+                    <solid android:color="@color/greenBackground"/>
+                    <corners android:radius="1dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <!-- Unselected: transparent -->
+    <item>
+        <color android:color="@android:color/transparent"/>
+    </item>
+</selector>

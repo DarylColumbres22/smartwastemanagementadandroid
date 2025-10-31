@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/medyowhite"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/analyticsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Analytics Overview"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="2dp" />
+
+        <TextView
+            android:id="@+id/analyticsRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last 30 days · Asia/Manila"
+            android:textColor="@color/chart_text"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:importantForAccessibility="no"
+            app:dividerInsetStart="0dp"
+            app:dividerInsetEnd="0dp" />
+
+        <TextView
+            android:id="@+id/summaryText"
+            android:visibility="gone"
+            android:text="Loading…"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Daily average fill (%)"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineDaily"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Daily average fill line chart"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipDaily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDaily7"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7d"
+                android:checkable="true" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDaily14"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14d"
+                android:checkable="true" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipDaily30"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30d"
+                android:checkable="true" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:importantForAccessibility="no"
+            app:dividerInsetStart="0dp"
+            app:dividerInsetEnd="0dp" />
+
+        <TextView
+            android:text="Weekly average fill (%)"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barWeekly"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Weekly average fill bar chart"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipWeekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWeekly4"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4w"
+                android:checkable="true" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWeekly8"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8w"
+                android:checkable="true" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWeekly12"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12w"
+                android:checkable="true" />
+        </com.google.android.material.chip.ChipGroup>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:importantForAccessibility="no"
+            app:dividerInsetStart="0dp"
+            app:dividerInsetEnd="0dp" />
+
+        <TextView
+            android:id="@+id/weekdayChartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekday Profile (Avg Fill %)"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/weekdayChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:importantForAccessibility="no"
+            app:dividerInsetStart="0dp"
+            app:dividerInsetEnd="0dp" />
+
+        <!-- Title -->
+        <TextView
+            android:text="AI insights"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Inline loading row -->
+        <LinearLayout
+            android:id="@+id/insightsLoadingRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start|center_vertical"
+            android:visibility="gone"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+            <ProgressBar
+                android:id="@+id/insightsSpinner"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/insightsLoadingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="Updating insights…"/>
+        </LinearLayout>
+
+        <!-- The output -->
+        <TextView
+            android:id="@+id/aiText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:lineSpacingExtra="2dp" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:importantForAccessibility="no"
+            app:dividerInsetStart="0dp"
+            app:dividerInsetEnd="0dp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/etaCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="12dp"
+            android:visibility="gone"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/meter_track"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Estimated time to 90% fill"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:layout_marginTop="8dp">
+
+                    <!-- Bio -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp">
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/chart_bio"
+                            android:background="@drawable/dot_rounded"/>
+                        <TextView
+                            android:id="@+id/etaBio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bio —" />
+                    </LinearLayout>
+
+                    <!-- Rec -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp">
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/chart_rec"
+                            android:background="@drawable/dot_rounded"/>
+                        <TextView
+                            android:id="@+id/etaRec"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rec —" />
+                    </LinearLayout>
+
+                    <!-- Res -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp">
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/chart_res"
+                            android:background="@drawable/dot_rounded"/>
+                        <TextView
+                            android:id="@+id/etaRes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Res —" />
+                    </LinearLayout>
+
+                    <!-- Haz -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp">
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:backgroundTint="@color/chart_haz"
+                            android:background="@drawable/dot_rounded"/>
+                        <TextView
+                            android:id="@+id/etaHaz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Haz —" />
+                    </LinearLayout>
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/etaFootnote"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Based on last 24h trend. Updates live."
+                    android:textColor="@color/chart_text"
+                    android:alpha="0.75"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/historyHeader"
+            android:text="HISTORY"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:id="@+id/dailyHeader"
+            android:text="Daily averages (table)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="horizontal">
+
+            <TextView
+                android:id="@+id/dailyList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:includeFontPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/weeklyHeader"
+            android:text="Weekly averages (table)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="horizontal">
+
+            <TextView
+                android:id="@+id/weeklyList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:textSize="12sp"
+                android:includeFontPadding="false"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+        </HorizontalScrollView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/analyticsHeaderCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/meter_track"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/summaryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status summary"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:letterSpacing="0.01"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Row: Right now -->
+                <TextView
+                    android:id="@+id/labelNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Right now (current fill)"
+                    android:textSize="12sp"
+                    android:textColor="@color/chart_text"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/nowBioPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bio —"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp"/>
+
+                    <TextView
+                        android:id="@+id/nowRecPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rec —"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp"/>
+
+                    <TextView
+                        android:id="@+id/nowResPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Res —"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp"/>
+
+                    <TextView
+                        android:id="@+id/nowHazPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Haz —"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="2dp"/>
+                </LinearLayout>
+
+                <!-- Row: Today -->
+                <TextView
+                    android:id="@+id/labelToday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Today so far (average)"
+                    android:textSize="12sp"
+                    android:textColor="@color/chart_text"
+                    android:layout_marginBottom="4dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/todayBioPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bio —"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/todayRecPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rec —"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/todayResPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Res —"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/todayHazPill"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Haz —"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- Divider -->
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="6dp"
+                    app:dividerInsetStart="0dp"
+                    app:dividerInsetEnd="0dp" />
+
+                <!-- Footnotes: small + readable -->
+                <TextView
+                    android:id="@+id/avg30Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30-day average —"
+                    android:textSize="12sp"
+                    android:textColor="@color/chart_text"
+                    android:layout_marginBottom="2dp"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:id="@+id/disposedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimated emptied (30 days): —"
+                    android:textSize="12sp"
+                    android:textColor="@color/chart_text"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/exportCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:text="Export"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExportCsv"
+                    style="@style/Widget.ExportButton"
+                    android:text="Export CSV"
+                    app:icon="@drawable/ic_file_csv_24"
+                    app:iconTint="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

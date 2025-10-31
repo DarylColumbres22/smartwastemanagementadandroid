@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_export_csv"
+        android:title="Export CSV"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_export_pdf"
+        android:title="Export PDF"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_refresh_insights"
+        android:title="Refresh insights"
+        app:showAsAction="never" />
+</menu>

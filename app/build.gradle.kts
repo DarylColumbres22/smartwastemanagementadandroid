@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.smartwaste"
+    namespace = "com.smartwaste.capstone"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.smartwaste"
+        applicationId = "com.smartwaste.capstone"
         minSdk = 25
         targetSdk = 34
         versionCode = 12
@@ -27,7 +27,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -37,6 +38,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -45,13 +47,23 @@ android {
 
 dependencies {
     // Firebase BOM (Bill of Materials)
-    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
-    implementation ("com.airbnb.android:lottie:6.6.3")
-    implementation("com.google.firebase:firebase-analytics")
+    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
-    implementation("com.google.firebase:firebase-database-ktx:20.2.2")
-    implementation ("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.firebase:firebase-functions-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+    // coroutines for .await()
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.1")
+
+    coreLibraryDesugaring ("com.android.tools:desugar_jdk_libs:2.0.4")
+
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
+    implementation ("com.github.PhilJay:MPAndroidChart:3.1.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+
+
 
 
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
@@ -62,6 +74,8 @@ dependencies {
     implementation ("androidx.core:core-ktx:1.13.1")
 
     implementation ("com.google.android.material:material:1.12.0")
+
+
 
 
 
@@ -92,7 +106,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+
 
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")

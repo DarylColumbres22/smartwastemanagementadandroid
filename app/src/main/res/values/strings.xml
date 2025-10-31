@@ -14,7 +14,6 @@
     <string name="email_error_title">Couldn’t send the code</string>
     <string name="email_error_msg">Something went wrong sending the email.</string>
 
-    <!-- Email-only copy -->
     <string name="otp_email_title">Check your email</string>
     <string name="otp_email_message">We’ll send a one-time passcode (OTP) to your registered email.</string>
     <string name="otp_email_masked_placeholder">Sending to: ****@example.com</string>
@@ -22,5 +21,13 @@
     <string name="action_cancel">Cancel</string>
     <string name="action_send_otp_email">Send OTP to email</string>
     <string name="action_resend_otp">Resend code</string>
+    <string name="approve">Approve</string>
+    <string name="is_this_you">Is this you?</string>
+    <string name="reject">Reject</string>
+    <string name="banner_realtime">Realtime data</string>
+    <string name="banner_last_update">updated</string>
+    <string name="refresh">"refresh "</string>
+    <string name="add_user">add_user\n</string>
+
 
 </resources>

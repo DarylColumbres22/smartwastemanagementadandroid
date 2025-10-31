@@ -14,7 +14,6 @@
         android:padding="16dp"
         android:orientation="vertical">
 
-
         <TextView
             android:id="@+id/promptTextView"
             android:layout_width="match_parent"
@@ -24,8 +23,6 @@
             android:textStyle="bold"
             android:gravity="center"
             android:paddingBottom="8dp" />
-
-
         <TextView
             android:id="@+id/emailTextView"
             android:layout_width="wrap_content"
